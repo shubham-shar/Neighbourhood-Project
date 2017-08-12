@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <!-- styles put here, but you can include a CSS file and reference it instead! -->
+   <link rel="stylesheet" href="CSS/main.css">
+   <!-- Css file for mobile view -->
+   <link rel="stylesheet" media="(max-width: 700px)" href="CSS/mobile.css">
+   <meta name="viewport" content="width=device-width,initial-scale=1">
+   <!-- Added jquery to the webpage -->
+   <script src="JS/jquery.min.js"></script>
+ </head>
+ <body>
+   <!-- div block for whole page -->
+   <div class="container">
+     <button type="button" name="button"
+        Data-bind="click: HideOptions, text: hText" id="hide-options-button"></button>
+        <!-- div block for the advanced options -->
+     <div class="options-box" data-bind="visible: hide">
+       <div class="divs">
+         <input id="zoom-to-area-text" type="text" placeholder="Enter your favorite area!"
+         data-bind="value: searchValue, valueUpdate: 'afterkeydown' ,event: {keyup: search}">
+         <button id="zoom-to-area" type="button"
+          data-bind="click: searchArea">Search</button>
+       </div>
+       <hr>
+       <div class="divs">
+         <ul data-bind="foreach: markers">
+           <!-- ko if: display -->
+           <li id="links" data-bind="text: name,click: $parent.setSelected"></li>
+           <!-- /ko -->
+         </ul>
+       </div>
+       <hr>
+       <div class="divs">
+         <button id="show-listings" type="button" data-bind="click: showListings">Show Listings</button>
+         <button id="hide-listings" type="button" data-bind="click: hideListings">Hide Listings</button>
+       </div>
+       <hr>
+       <div>
+         <button type="button" name="button"
+          id="nightmode"  Data-bind="click: NightMode, text: Name"></button>
+       </div>
+       <hr>
+       <div class="wikipedia-container">
+         <h3 id="wikipedia-header">Relevant Wikipedia Links</h3>
+         <p data-bind="text: error"></p>
+         <a data-bind="text: wikiname, attr: {href: url}" target="_new"></a>
+       </div>
+       <br>
+       <button type="button" data-bind="click: articles">Wiki Articles</button>
+     </div>
+     <div id="map"></div>
+   </div>
+   <!-- Added knockout-3 to the webpage -->
+   <script type="text/javascript" src="JS/knockout-3.4.2.js"></script>
+   <!-- javascript file -->
+   <script src="JS/base.js"></script>
+   <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJMqXweHlTaS40bYKsBvhz6vH763oGjnc&libraries=drawing,geometry&v=3&callback=initMap"
+        onerror="mapError()">
+   </script>
+ </body>
+</html>

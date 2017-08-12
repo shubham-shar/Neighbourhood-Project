@@ -1,0 +1,19 @@
+@media screen and (max-width: 700px) {
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+	.options-box{
+    width: 100%;
+  }
+  input{
+    font-size: 120%;
+  }
+  #map{
+    width: 100%;
+  }
+  #zoom-to-area {
+    width: 24%;
+    font-size: 100%;
+  }
+}
