@@ -27,7 +27,7 @@ To run this project you should have the following things on your computer.<br>
 # How to execute the project
 
 - Open main.html in any editor.	
-- In the this file replace YOUR_API_KEY in `key=YOUR_API_KEY` with your own key of google map api.
+- In this file replace YOUR_API_KEY in `key=YOUR_API_KEY` with your own key of google map api.
 - Connect to the internet.
 - Now open the main.html file in the browser
 - Map webpage will open in the browser
